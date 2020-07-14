@@ -1,7 +1,5 @@
 package sullivan.gareth.library.model;
 
-
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -58,10 +56,10 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return id.equals(book.id) &&
-                title.equals(book.title) &&
+        return Objects.equals(id, book.id) &&
+                Objects.equals(title, book.title) &&
                 Objects.equals(description, book.description) &&
-                author.equals(book.author);
+                Objects.equals(author, book.author);
     }
 
     @Override
