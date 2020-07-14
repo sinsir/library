@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "books")
+@Table(name = "book")
 public class Book {
 
     @Id
@@ -16,7 +16,7 @@ public class Book {
     private String description;
 
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "author_id")
     private Author author;
 
     public Book() {}

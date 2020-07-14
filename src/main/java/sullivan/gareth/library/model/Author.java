@@ -1,11 +1,11 @@
 package sullivan.gareth.library.model;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "author")
+@Table (name="author")
 public class Author {
     @Id
     @GeneratedValue
@@ -16,11 +16,11 @@ public class Author {
     private String lastName;
 
     @ManyToMany
-    private List<Book> books;
+    private Set<Book> books;
 
     public Author() {}
 
-    public Author(String firstName, String lastName, List<Book> books) {
+    public Author(String firstName, String lastName, Set<Book> books) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.books = books;
@@ -42,11 +42,11 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public List<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 
